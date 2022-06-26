@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <script src="/js/express.js"></script>
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <ul id="temp">
+            <% for (let msg in messages){ %>
+            <li> <%= messages[msg] %></li>
+            <% } %>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<%- include('partials/header')%>
+<head>
+    <link rel="stylesheet" href="/create-post.css">
+</head>
+  <body> 
+    <h3>Compose</h3>
+    <form action="/create-post" method="POST">
+      <p>Title</p>
+      <div>
+        <input type="text" id="title" name="title" />
+      </div>
+      <div>
+        <p>Tag</p>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Notice</a>
+            <a class="dropdown-item" href="#">Educative Blog</a>
+            <a class="dropdown-item" href="#">Interview Experience</a>
+          </div>
+        </div>
+      </div>
+      <br />
+      <p>Content</p>
+      <div id="text_area">
+        <textarea name="content" id="content" cols="20" rows="25"></textarea>
+      </div>
+
+      <div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <button type="submit" id="submit">Post</button>
+      </div>
+    </form>
+    <%- include('partials/footer')%>
+  </body>
+</html>
